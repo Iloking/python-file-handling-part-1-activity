@@ -1,17 +1,22 @@
-# With function
-with open('Codingal.txt', 'r') as file:
-    print(file.read())
-file.close()
+#create a new file
+new_file = open('New_File.txt', 'x')
+new_file.close()
 
-with open('Codingal.txt', 'w') as file:
-    file.write("I am a penguine and I am 10 years old.")
-file.close()
+#check if a file exists
+import os
+print("Checking if New_File exists or not....")
+if os.path.exists("New_File.txt"):
+    os.remove("New_File.txt")
+else:
+    print("The file does not exist")
 
-# Split function
-with open('Codingal.txt', 'r') as file:
-    data = file.readlines()
-    print("The words are:")
-    for line in data:
-        word = line.split()
-        print(word)
-file.close()
+#create a new if it doesn't
+my_file = open("New_File.txt", 'w')
+my_file.write("Hi! I am Penguin and I am 1 yr old.")
+my_file.close()
+
+#delete file named codingal
+os.remove('Codingal.txt')
+
+#delete the folder
+os.rmdir('Folder')
